@@ -13,8 +13,7 @@ bool sloppyshuffles(string A, string B, int n){
     A2=A.substr(n/2,n/2);
     B2=B.substr(n/2,n/2);
     
-    
-    if ((sloppyshuffles(A2, B2, n/2) && sloppyshuffles(A2, B2, n/2))) return true; 
+    if ((sloppyshuffles(A2, B2, n/2) && sloppyshuffles(A1, B1, n/2))) return true; 
 
     if ((sloppyshuffles(A1, B2, n/2) && sloppyshuffles(A2, B1, n/2))) return true; 
 
@@ -25,14 +24,14 @@ bool sloppyshuffles(string A, string B, int n){
 int main() {
     int T;
     cin>>T;
-    for(int i =0; i <T;i++){
+    for(int i=0; i<T; i++){
         int n;
         cin>>n;
         string strA;
         string strB;
         cin>>strA;
         cin>>strB;
-        int k = 0;
+
         if (sloppyshuffles(strA, strB, n)){
             cout<<"YES"<<endl;
         }
